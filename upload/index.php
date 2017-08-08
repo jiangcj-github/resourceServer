@@ -3,13 +3,8 @@ require_once("../util/config.php");
 require_once("../util/UploadHandler.php");
 
 //檢查_token
-if(!isset($_REQUEST["_token"])){
-    die("404");
-}
-$_token=$_REQUEST["_token"];
-if($_token!="222"){
-    die("404");
-}
+include("isValidToken.php");
+
 //上傳文件限制
 if(isset($_FILES["vInput"])){
     //文件名限制
