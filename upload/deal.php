@@ -2,10 +2,10 @@
 require_once("../util/config.php");
 require_once("../util/FfmpegUtil.php");
 
-//檢查_token
-include("isValidToken.php");
 //設置Ajax跨域請求
 header("Access-Control-Allow-Origin: "."*");
+//檢查_token
+include("isValidToken.php");
 //
 if(!isset($_REQUEST["name"])){
     die_json(["msg"=>"Invalid Param"]);

@@ -2,9 +2,10 @@
 require_once("../util/config.php");
 require_once("../util/UploadHandler.php");
 
+//設置Ajax跨域請求
+header("Access-Control-Allow-Origin: "."*");
 //檢查_token
 include("isValidToken.php");
-
 //上傳文件限制
 if(isset($_FILES["vInput"])){
     //文件名限制
