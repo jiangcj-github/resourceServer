@@ -17,9 +17,8 @@ $base=dirname(dirname($_SERVER["SCRIPT_FILENAME"]));
 $tmpDir=$base."/tmp";
 $dataDir=$base."/data";
 if(!is_dir($dataDir)){
-    mkdir($dataDir);
+    mkdir($dataDir,0755);
 }
-chmod($dataDir,0755);
 //移動文件至data目錄
 $mp4=$tmpDir."/".$name;
 $png=$tmpDir."/".$name_pre.".png";
