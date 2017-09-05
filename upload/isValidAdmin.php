@@ -13,5 +13,5 @@ if($nowTime-$_time>60*60){
     die_json(["msg"=>"Token Expired"]);
 }
 if($_token!=md5($ip.$_time.$secret)){
-    die_json(["msg"=>"No Permission1"]);
+    die_json(["msg"=>"No Permission"]);
 }
