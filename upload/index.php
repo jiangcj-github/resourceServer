@@ -26,8 +26,6 @@ if(isset($_FILES["vInput"])){
         die("Upload Size:".round($size/1024)."M,Limited:[1M,200M]");
     }
 }
-//檢查權限
-chmod("../",0755);
 //處理上傳
 $handler = new UploadHandler(["param_name"=>"vInput"]);
 

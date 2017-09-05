@@ -18,13 +18,10 @@ $mp4=$base."/tmp/".$name;
 $png=$base."/tmp/".$name_pre.".png";
 $png_p=$base."/tmp/".$name_pre."_p.png";
 $ffmpeg=$base."/util/ffmpeg";
-chmod($ffmpeg,0777);
 
 $res=FfmpegUtil::video_info($ffmpeg,$mp4);
 FfmpegUtil::video_frame_by_per($ffmpeg,$mp4,$png,$res["seconds"],20,200,200);
 FfmpegUtil::video_frame_by_per($ffmpeg,$mp4,$png_p,$res["seconds"],10,400,200);
-chmod($png,0777);
-chmod($png_p,0777);
 
 $res["png"]="http://".$_SERVER["SERVER_NAME"]."/tmp/".$name_pre.".png";
 
