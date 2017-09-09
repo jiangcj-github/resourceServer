@@ -17,14 +17,15 @@ $base=dirname(dirname($_SERVER["SCRIPT_FILENAME"]));
 $tmpDir=$base."/tmp";
 $dataDir=$base."/data";
 if(!is_dir($dataDir)){
-    mkdir($dataDir);
+    mkdir($dataDir,0755);
 }
-chmod($dataDir,0755);
 //移動文件至data目錄
 $mp4=$tmpDir."/".$name;
 $png=$tmpDir."/".$name_pre.".png";
+$png_p=$tmpDir."/".$name_pre."_p.png";
 $newMp4=$dataDir."/".$vid.".mp4";
 $newPng=$dataDir."/".$vid.".png";
+$newPng_p=$dataDir."/".$vid."_p.png";
 if(file_exists($newMp4)){
     unlink($newMp4);
 }
@@ -33,6 +34,10 @@ if(file_exists($newPng)){
     unlink($newPng);
 }
 rename($png,$newPng);
+if(file_exists($newPng_p)){
+    unlink($newPng_p);
+}
+rename($png_p,$newPng_p);
 //清理tmp目錄
 foreach(scandir($tmpDir) as $afile){
     if($afile=="."||$afile=="..") continue;

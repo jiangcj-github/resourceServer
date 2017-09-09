@@ -15,11 +15,15 @@ $base=dirname(dirname($_SERVER["SCRIPT_FILENAME"]));
 $dataDir=$base."/data";
 $mp4=$dataDir."/".$vid.".mp4";
 $png=$dataDir."/".$vid.".png";
+$png_p=$dataDir."/".$vid."_p.png";
 if(file_exists($mp4)){
     unlink($mp4);
 }
 if(file_exists($png)){
     unlink($png);
+}
+if(file_exists($png_p)){
+    unlink($png_p);
 }
 die_json(["ok"=>"ok"]);
 
