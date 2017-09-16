@@ -22,8 +22,8 @@ if(isset($_FILES["vInput"])){
     $range=$_SERVER["HTTP_CONTENT_RANGE"];
     $range = $range?preg_split("/[^0-9]+/",$range) : null;
     $size = $range ? $range[3]:null;
-    if($size>200*1024*1024 || $size<1*1024*1024){
-        die("Upload Size:".round($size/1024)."M,Limited:[1M,200M]");
+    if($size>1024*1024*1024 || $size<100*1024*1024){
+        die("Upload Size:".round($size/1024)."M,Limited:[100M,1024M]");
     }
 }
 //處理上傳
