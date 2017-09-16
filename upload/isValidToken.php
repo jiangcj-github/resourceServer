@@ -6,8 +6,7 @@ $_token=$_REQUEST["_token"];
 //檢查Token
 $_time=$_REQUEST["_time"];
 $secret="lindakai";
-//$ip=$_SERVER["REMOTE_ADDR"];
-$ip="127.0.0.1";
+$ip=$_SERVER["REMOTE_ADDR"];
 $nowTime=(new DateTime())->getTimestamp();
 if($nowTime-$_time>60*60*6){
     die("Token Expired");
