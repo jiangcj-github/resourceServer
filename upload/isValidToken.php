@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("UTC");
 if(!isset($_REQUEST["_token"])||!isset($_REQUEST["_time"])){
     die("No Permission");
 }
